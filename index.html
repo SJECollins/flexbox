@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Flexbox Cheatsheet</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Flexbox Cheatsheet</h1>
+        <section>
+            <h2>Without flexbox:</h2>
+            <div class="container">
+                <div class="">
+                    <div>
+                        <div class="box">One</div>
+                        <div class="box">Two</div>
+                        <div class="box">Three</div>
+                    </div>
+                </div>
+            </div>
+        </section>        
+        <section>
+            <h2>display:</h2>
+            <div class="container">
+                <div class="description">
+                    <h3>display: flex</h3>
+                    <p>Applied to the container or parent.</p>
+                    <p>Default is flex-row</p>
+                </div>
+                <div class="example">
+                    <div class="display">
+                        <div class="box">One</div>
+                        <div class="box">Two</div>
+                        <div class="box">Three</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>flex-direction:</h2>
+            <p>Applied to the parent container.</p>
+            <p>Sets the direction of the flex items within the parent container.</p>
+            <div class="container">
+                <div class="description">
+                    <h3>flex-direction: row</h3>
+                    <p>display: flex defaults to flex-direction: row.</p>
+                </div>
+                <div class="example">
+                    <div class="display row">
+                        <div class="box">One</div>
+                        <div class="box">Two</div>
+                        <div class="box">Three</div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="description">
+                    <h3>flex-direction: row-reverse</h3>
+                    <p>Reverses order of flex items.</p>
+                </div>
+                <div class="example">
+                    <div class="display reverse">
+                        <div class="box">One</div>
+                        <div class="box">Two</div>
+                        <div class="box">Three</div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="description">
+                    <h3>flex-direction: column</h3>
+                    <p>Displays flex items as a column.</p>
+                </div>
+                <div class="example">
+                    <div class="display col">
+                        <div class="box">One</div>
+                        <div class="box">Two</div>
+                        <div class="box">Three</div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="description">
+                    <h3>flex-direction: column-reverse</h3>
+                    <p>Displays flex items as a column in reverse order.</p>
+                </div>
+                <div class="example">
+                    <div class="display col-reverse">
+                        <div class="box">One</div>
+                        <div class="box">Two</div>
+                        <div class="box">Three</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
