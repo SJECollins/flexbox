@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Flexbox Cheatsheet</title>
 </head>
+
 <body>
     <header>
         <nav>
-            <ul id="nav-links">
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
+            <ul class="nav-links">
+                <li><a href="#flex-direction">Flex Direction</a></li>
+                <li><a href="#flex-wrap">Flex Wrap</a></li>
+                <li><a href="#justify-content">Justify Content</a></li>
+                <li><a href="#align-items">Align Items</a></li>
+                <li><a href="#align-content">Align Content</a></li>
+            </ul>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Parent Properties</a></li>
+                <li><a href="children.html">Children Properties</a></li>
             </ul>
         </nav>
     </header>
@@ -32,13 +37,13 @@
                     </div>
                 </div>
             </div>
-        </section>        
+        </section>
         <section>
             <h2>display:</h2>
             <div class="container">
                 <div class="description">
                     <h3>display: flex</h3>
-                    <p>Applied to the container or parent.</p>
+                    <p>Applied to the container/parent.</p>
                     <p>Default is flex-row</p>
                 </div>
                 <div class="example">
@@ -50,67 +55,468 @@
                 </div>
             </div>
         </section>
-        <section>
-            <h2>flex-direction:</h2>
-            <p>Applied to the parent container.</p>
-            <p>Sets the direction of the flex items within the parent container.</p>
-            <div class="container">
-                <div class="description">
-                    <h3>flex-direction: row</h3>
-                    <p>display: flex defaults to flex-direction: row.</p>
+        <section id="flex-direction">
+            <div class="layout-container evenly">
+                <div>
+                    <h2>flex-direction:</h2>
+                    <p>Applied to the parent container.</p>
+                    <p>Sets the direction of the flex items within the parent container.</p>
                 </div>
-                <div class="example">
-                    <div class="display row">
-                        <div class="box">One</div>
-                        <div class="box">Two</div>
-                        <div class="box">Three</div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="description">
-                    <h3>flex-direction: row-reverse</h3>
-                    <p>Reverses order of flex items.</p>
-                </div>
-                <div class="example">
-                    <div class="display reverse">
-                        <div class="box">One</div>
-                        <div class="box">Two</div>
-                        <div class="box">Three</div>
-                    </div>
+                <div>
+                    <code>
+                        .parent: {<br/>
+                        &nbsp display: flex;<br/>
+                        &nbsp flex-direction: _____;<br/>
+                        }<br/>
+                        .flex-items {<br/>
+                        &nbsp min-height: 80px;<br/>
+                        &nbsp width: 40px;<br/>
+                        }
+                    </code>
                 </div>
             </div>
-            <div class="container">
-                <div class="description">
-                    <h3>flex-direction: column</h3>
-                    <p>Displays flex items as a column.</p>
-                </div>
-                <div class="example">
-                    <div class="display col">
-                        <div class="box">One</div>
-                        <div class="box">Two</div>
-                        <div class="box">Three</div>
+            <div class="layout-container">
+                <div class="container">
+                    <div class="description">
+                        <h3>flex-direction: row</h3>
+                        <p>display: flex defaults to flex-direction: row.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display row">
+                            <div class="box">One</div>
+                            <div class="box">Two</div>
+                            <div class="box">Three</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="container">
-                <div class="description">
-                    <h3>flex-direction: column-reverse</h3>
-                    <p>Displays flex items as a column in reverse order.</p>
+                <div class="container">
+                    <div class="description">
+                        <h3>flex-direction: row-reverse</h3>
+                        <p>Reverses order of flex items.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display reverse">
+                            <div class="box">One</div>
+                            <div class="box">Two</div>
+                            <div class="box">Three</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="example">
-                    <div class="display col-reverse">
-                        <div class="box">One</div>
-                        <div class="box">Two</div>
-                        <div class="box">Three</div>
+                <div class="container">
+                    <div class="description">
+                        <h3>flex-direction: column</h3>
+                        <p>Displays flex items as a column.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display col">
+                            <div class="box">One</div>
+                            <div class="box">Two</div>
+                            <div class="box">Three</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>flex-direction: column-reverse</h3>
+                        <p>Displays flex items as a column in reverse order.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display col-reverse">
+                            <div class="box">One</div>
+                            <div class="box">Two</div>
+                            <div class="box">Three</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
+        <section id="flex-wrap">
+            <div class="layout-container evenly">
+                <div>
+                    <h2>flex-wrap:</h2>
+                    <p>Applied to the parent container.</p>
+                    <p>Sets whether the flex items can wrap.</p>
+                    <p>Default is nowrap.</p>
+                </div>
+                <div>
+                    <code>
+                        .parent: {<br/>
+                        &nbsp display: flex;<br/>
+                        &nbsp flex-wrap: _____;<br/>
+                        }<br/>
+                        .flex-items {<br/>
+                        &nbsp min-height: 80px;<br/>
+                        &nbsp width: 40px;<br/>
+                        }
+                    </code>
+                </div>
+            </div>
+            <div>
+                <div class="layout-container">
+                    <div class="container">
+                        <div class="description">
+                            <h3>flex-wrap: nowrap</h3>
+                            <p>Is default. Prevents flex items from wrapping on smaller screens.</p>
+                        </div>
+                        <div class="example">
+                            <div class="display nowrap">
+                                <div class="box">One</div>
+                                <div class="box">Two</div>
+                                <div class="box">Three</div>
+                                <div class="box">Four</div>
+                                <div class="box">Five</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="description">
+                            <h3>flex-wrap: wrap</h3>
+                            <p>Allows flex items to wrap.</p>
+                        </div>
+                        <div class="example">
+                            <div class="display wrap">
+                                <div class="box">One</div>
+                                <div class="box">Two</div>
+                                <div class="box">Three</div>
+                                <div class="box">Four</div>
+                                <div class="box">Five</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="description">
+                            <h3>flex-wrap: wrap-reverse</h3>
+                            <p>Allows flex items to wrap in reverse order.</p>
+                        </div>
+                        <div class="example">
+                            <div class="display wrap-reverse">
+                                <div class="box">One</div>
+                                <div class="box">Two</div>
+                                <div class="box">Three</div>
+                                <div class="box">Four</div>
+                                <div class="box">Five</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section id="justify-content">
+            <div class="layout-container evenly">
+                <div>
+                    <h2>justify-content:</h2>
+                    <p>Applied to the parent container.</p>
+                    <p>Sets space between and around flex items along main-axis of container.</p>
+                    <p>Default is flex-start</p>
+                </div>
+                <div>
+                    <code>
+                        .parent: {<br/>
+                        &nbsp display: flex;<br/>
+                        &nbsp width: 180px;<br/>
+                        &nbsp justify-content: _____;<br/>
+                        }<br/>
+                        .flex-items {<br/>
+                        &nbsp min-height: 80px;<br/>
+                        &nbsp width: 40px;<br/>
+                        }
+                    </code>
+                </div>
+            </div>
+            <div class="layout-container">
+                <div class="container">
+                    <div class="description">
+                        <h3>justify-content: flex-start</h3>
+                        <p>Is default. Flex items are packed toward start of main-axis.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display justify-start wider">
+                            <div class="box">One</div>
+                            <div class="box">Two</div>
+                            <div class="box">Three</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>justify-content: flex-end</h3>
+                        <p>Flex items are packed toward end of main-axis.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display justify-end wider">
+                            <div class="box">One</div>
+                            <div class="box">Two</div>
+                            <div class="box">Three</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>justify-content: center</h3>
+                        <p>Flex items are packed in center of main-axis.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display justify-center wider">
+                            <div class="box">One</div>
+                            <div class="box">Two</div>
+                            <div class="box">Three</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>justify-content: space-evenly</h3>
+                        <p>Flex items have equal space around them.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display evenly wider">
+                            <div class="box">One</div>
+                            <div class="box">Two</div>
+                            <div class="box">Three</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>justify-content: space-around</h3>
+                        <p>Flex items have equal space before, after and between them.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display around wider">
+                            <div class="box">One</div>
+                            <div class="box">Two</div>
+                            <div class="box">Three</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>justify-content: space-between</h3>
+                        <p>Flex items are evenly distributed across main-axis with first item at start and last item at
+                            end.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display between wider">
+                            <div class="box">One</div>
+                            <div class="box">Two</div>
+                            <div class="box">Three</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="align-items">
+            <div class="layout-container evenly">
+                <div>
+                    <h2>align-items:</h2>
+                    <p>Applied to the parent container.</p>
+                    <p>Sets layout of flex items on cross axis.</p>
+                    <p>Default is stretch.</p>
+                </div>
+                <div>
+                    <code>
+                        .parent: {<br/>
+                        &nbsp display: flex;<br/>
+                        &nbsp height: 160px;<br/>
+                        &nbsp align-items: _____;<br/>
+                        }<br/>
+                        .flex-items {<br/>
+                        &nbsp min-height: 80px / 60px / 100px;<br/>
+                        &nbsp width: 40px;<br/>
+                        }
+                    </code>
+                </div>
+            </div>
+            <div class="layout-container">
+                <div class="container">
+                    <div class="description">
+                        <h3>align-items: stretch</h3>
+                        <p>Is default. Flex items stretch to fill container if not explicit size.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display stretch bigger">
+                            <div class="box">One</div>
+                            <div class="box box-two">Two</div>
+                            <div class="box box-three">Three</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>align-items: flex-start</h3>
+                        <p>Cross-start margin edges of flex items on cross-start line of container.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display align-start bigger">
+                            <div class="box">One</div>
+                            <div class="box box-two">Two</div>
+                            <div class="box box-three">Three</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>align-items: flex-end</h3>
+                        <p>Cross-end margin edges of flex items cross-end line of container.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display align-end bigger">
+                            <div class="box">One</div>
+                            <div class="box box-two">Two</div>
+                            <div class="box box-three">Three</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>align-items: center</h3>
+                        <p>Centers flex items on the cross-axis.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display align-center bigger">
+                            <div class="box">One</div>
+                            <div class="box box-two">Two</div>
+                            <div class="box box-three">Three</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>align-items: baseline</h3>
+                        <p>Flex items are aligned so that their flex container baselines align.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display align-baseline bigger">
+                            <div class="box">One</div>
+                            <div class="box box-two">Two</div>
+                            <div class="box box-three">Three</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="align-content">
+            <div class="layout-container evenly">
+                <div>
+                    <h2>align-content:</h2>
+                    <p>Applied to the parent container.</p>
+                    <p>Sets distribution of space between and around flex items on cross axis .</p>
+                    <p>Only works on multi-line containers. No effect on single line.</p>
+                    <p>Default is stretch.</p>
+                </div>
+                <div>
+                    <code>
+                        .parent: {<br/>
+                        &nbsp display: flex;<br/>
+                        &nbsp flex-wrap: wrap; <br/>
+                        &nbsp height: 160px;<br/>
+                        &nbsp align-content: _____;<br/>
+                        }<br/>
+                        .flex-items {<br/>
+                        &nbsp height: 40px; (min-height:80px; for stretch)<br/>
+                        &nbsp width: 40px;<br/>
+                        }
+                    </code>
+                </div>
+            </div>
+            <div class="layout-container">
+                <div class="container">
+                    <div class="description">
+                        <h3>align-content: stretch</h3>
+                        <p>Is default. Flex items stretch to fill container if not explicit size.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display wrap content-stretch bigger">
+                            <div class="box">One</div>
+                            <div class="box">Two</div>
+                            <div class="box">Three</div>
+                            <div class="box">Two</div>
+                            <div class="box">Three</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>align-content: flex-start</h3>
+                        <p>Cross-start margin edges of flex items on cross-start line of container.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display wrap content-start bigger">
+                            <div class="box box-height">One</div>
+                            <div class="box box-height">Two</div>
+                            <div class="box box-height">Three</div>
+                            <div class="box box-height">Four</div>
+                            <div class="box box-height">Five</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>align-content: flex-end</h3>
+                        <p>Cross-end margin edges of flex items cross-end line of container.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display wrap content-end bigger">
+                            <div class="box box-height">One</div>
+                            <div class="box box-height">Two</div>
+                            <div class="box box-height">Three</div>
+                            <div class="box box-height">Four</div>
+                            <div class="box box-height">Five</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>align-content: center</h3>
+                        <p>Centers flex items on the cross-axis.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display wrap content-center bigger">
+                            <div class="box box-height">One</div>
+                            <div class="box box-height">Two</div>
+                            <div class="box box-height">Three</div>
+                            <div class="box box-height">Four</div>
+                            <div class="box box-height">Five</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>align-content: space-between</h3>
+                        <p>Flex items are aligned so that their flex container baselines align.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display wrap content-between bigger">
+                            <div class="box box-height">One</div>
+                            <div class="box box-height">Two</div>
+                            <div class="box box-height">Three</div>
+                            <div class="box box-height">Four</div>
+                            <div class="box box-height">Five</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>align-content: space-around</h3>
+                        <p>Flex items are aligned so that their flex container baselines align.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display wrap content-around bigger">
+                            <div class="box box-height">One</div>
+                            <div class="box box-height">Two</div>
+                            <div class="box box-height">Three</div>
+                            <div class="box box-height">Four</div>
+                            <div class="box box-height">Five</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <button type="button" id="scroll-up">To Top &#9650;</button>
     </main>
     <footer>
 
     </footer>
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>

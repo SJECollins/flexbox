@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Flexbox Cheatsheet | Children</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#order">Order</a></li>
+                <li><a href="#flex-wrap">Flex Wrap</a></li>
+                <li><a href="#justify-content">Justify Content</a></li>
+                <li><a href="#align-items">Align Items</a></li>
+                <li><a href="#align-content">Align Content</a></li>
+            </ul>
+            <ul class="nav-links">
+                <li><a href="index.html">Parent Properties</a></li>
+                <li><a href="children.html" class="active">Children Properties</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="order">
+            <div class="layout-container evenly">
+                <div>
+                    <h2>order:</h2>
+                    <p>Applied to children.</p>
+                    <p>Sets order flex items appear in container.</p>
+                </div>
+                <div>
+                    <code>
+                        .parent: {<br/>
+                        &nbsp display: flex;<br/>
+                        }<br/>
+                        .flex-items {<br/>
+                        &nbsp min-height: 80px;<br/>
+                        &nbsp width: 40px;<br/>
+                        &nbsp order: _____;<br/>
+                        }
+                    </code>
+                </div>
+            </div>
+            <div class="layout-container evenly">
+                <div class="container">
+                    <div class="description">
+                        <h3>without order</h3>
+                        <p>Flex items display in order by flow of DOM elements.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display justify-end">
+                            <div class="box">One</div>
+                            <div class="box">Two</div>
+                            <div class="box">Three</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>order: 1 / 2 / 3, etc</h3>
+                        <p>Applying <code>order: 1</code> to box three, <code>order: 2</code> to box one and
+                            <code>order: 3</code> to box two.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display justify-center">
+                            <div class="box order-two">One</div>
+                            <div class="box order-three">Two</div>
+                            <div class="box order-one">Three</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="flex-grow">
+            <div class="layout-container evenly">
+                <div>
+                    <h2>flex-grow:</h2>
+                    <p>Applied to children.</p>
+                    <p>Sets order flex items appear in container.</p>
+                </div>
+                <div>
+                    <code>
+                        .parent: {<br/>
+                        &nbsp display: flex;<br/>
+                        }<br/>
+                        .flex-items {<br/>
+                        &nbsp min-height: 80px;<br/>
+                        &nbsp width: 40px;<br/>
+                        &nbsp order: _____;<br/>
+                        }
+                    </code>
+                </div>
+            </div>
+            <div class="layout-container evenly">
+                <div class="container">
+                    <div class="description">
+                        <h3>without order</h3>
+                        <p>Flex items display in order by flow of DOM elements.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display justify-end">
+                            <div class="box">One</div>
+                            <div class="box">Two</div>
+                            <div class="box">Three</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>order: 1 / 2 / 3, etc</h3>
+                        <p>Applying <code>order: 1</code> to box three, <code>order: 2</code> to box one and
+                            <code>order: 3</code> to box two.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display justify-center">
+                            <div class="box order-two">One</div>
+                            <div class="box order-three">Two</div>
+                            <div class="box order-one">Three</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <button type="button" id="scroll-up">To Top &#9650;</button>
+
+    </main>
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
