@@ -32,7 +32,8 @@ header {
     height: 100px;
     background-color: var(--site-black);
     font-family: Lato, sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    box-shadow: 0 2px 4px var(--site-orange);
 }
 
 nav {
@@ -49,6 +50,7 @@ nav {
 .nav-links {
     width: inherit;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
@@ -73,6 +75,7 @@ h1, h2, h3 {
     padding: 0.75rem 1.75rem;
     color: var(--site-white);
     background-color: var(--site-black);
+    box-shadow: 0 2px 4px var(--site-blue);
 }
 
 .box {
@@ -106,7 +109,7 @@ h1, h2, h3 {
 }
 
 .container {
-    width: 500px;
+    width: 350px;
     display: flex;
     justify-content: space-evenly;
     margin: 10px;
@@ -121,14 +124,14 @@ h1, h2, h3 {
 }
 
 .description {
-    padding: 2rem;
+    padding: 1rem;
     max-width: 250px;
     border-right: 2px dashed var(--site-blue);
 }
 
 .example {
     width: 250px;
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,7 +139,7 @@ h1, h2, h3 {
 }
 
 .bigger {
-    height: 160px;
+    min-height: 160px;
 }
 
 .wider {
