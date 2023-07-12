@@ -97,6 +97,13 @@ h1, h2, h3 {
     min-height: 100px;
 }
 
+.no-width {
+    width: auto;
+}
+
+.twice-width {
+    width: 80px
+}
 
 .container {
     width: 500px;
@@ -133,7 +140,7 @@ h1, h2, h3 {
 }
 
 .wider {
-    width: 180px;
+    width: 200px;
 }
 
 .display {
@@ -247,4 +254,64 @@ h1, h2, h3 {
 
 .order-three {
     order: 3;
+}
+
+.grow-one {
+    flex-grow: 1;
+}
+
+.grow-two {
+    flex-grow: 2;
+}
+
+.grow-three {
+    flex-grow: 3;
+}
+
+.basis-auto {
+    flex-basis: auto;
+}
+
+.basis-one {
+    flex-basis: 30px;
+}
+
+.basis-two {
+    flex-basis: 50px;
+}
+
+.basis-three {
+    flex-basis: 75px;
+}
+
+.shrink-one {
+    flex-shrink: 1;
+}
+
+.shrink-two {
+    flex-shrink: 2;
+}
+
+.shrink-three {
+    flex-shrink: 3;
+}
+
+.self-start {
+    align-self: flex-start;
+}
+
+.self-end {
+    align-self: flex-end;
+}
+
+.self-center {
+    align-self: center;
+}
+
+.self-baseline {
+    align-self: baseline;
+}
+
+.self-stretch {
+    align-self: stretch;
 }

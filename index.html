@@ -12,15 +12,15 @@
     <header>
         <nav>
             <ul class="nav-links">
+                <li><a href="index.html" class="active">Parent Properties</a></li>
+                <li><a href="children.html">Child Properties</a></li>
+            </ul>
+            <ul class="nav-links">
                 <li><a href="#flex-direction">Flex Direction</a></li>
                 <li><a href="#flex-wrap">Flex Wrap</a></li>
                 <li><a href="#justify-content">Justify Content</a></li>
                 <li><a href="#align-items">Align Items</a></li>
                 <li><a href="#align-content">Align Content</a></li>
-            </ul>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Parent Properties</a></li>
-                <li><a href="children.html">Children Properties</a></li>
             </ul>
         </nav>
     </header>
@@ -44,7 +44,7 @@
                 <div class="description">
                     <h3>display: flex</h3>
                     <p>Applied to the container/parent.</p>
-                    <p>Default is flex-row</p>
+                    <p>Default is <code>flex-direction: row</code></p>
                 </div>
                 <div class="example">
                     <div class="display">
@@ -412,7 +412,7 @@
                         &nbsp align-content: _____;<br/>
                         }<br/>
                         .flex-items {<br/>
-                        &nbsp height: 40px; (min-height:80px; for stretch)<br/>
+                        &nbsp height: 40px; (min-height:60px; for stretch)<br/>
                         &nbsp width: 40px;<br/>
                         }
                     </code>
@@ -426,11 +426,11 @@
                     </div>
                     <div class="example">
                         <div class="display wrap content-stretch bigger">
-                            <div class="box">One</div>
-                            <div class="box">Two</div>
-                            <div class="box">Three</div>
-                            <div class="box">Two</div>
-                            <div class="box">Three</div>
+                            <div class="box box-two">One</div>
+                            <div class="box box-two">Two</div>
+                            <div class="box box-two">Three</div>
+                            <div class="box box-two">Two</div>
+                            <div class="box box-two">Three</div>
                         </div>
                     </div>
                 </div>

@@ -12,15 +12,14 @@
     <header>
         <nav>
             <ul class="nav-links">
-                <li><a href="#order">Order</a></li>
-                <li><a href="#flex-wrap">Flex Wrap</a></li>
-                <li><a href="#justify-content">Justify Content</a></li>
-                <li><a href="#align-items">Align Items</a></li>
-                <li><a href="#align-content">Align Content</a></li>
+                <li><a href="index.html">Parent Properties</a></li>
+                <li><a href="children.html" class="active">Child Properties</a></li>
             </ul>
             <ul class="nav-links">
-                <li><a href="index.html">Parent Properties</a></li>
-                <li><a href="children.html" class="active">Children Properties</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#flex-grow">Flex Grow</a></li>
+                <li><a href="#flex-shrink">Flex Shrink</a></li>
+                <li><a href="#align-self">Align Self</a></li>
             </ul>
         </nav>
     </header>
@@ -80,17 +79,18 @@
                 <div>
                     <h2>flex-grow:</h2>
                     <p>Applied to children.</p>
-                    <p>Sets order flex items appear in container.</p>
+                    <p>Sets amount of available space flex item should take up inside flex container.</p>
                 </div>
                 <div>
                     <code>
                         .parent: {<br/>
                         &nbsp display: flex;<br/>
+                        &nbsp width: 180px;<br/>
                         }<br/>
                         .flex-items {<br/>
                         &nbsp min-height: 80px;<br/>
-                        &nbsp width: 40px;<br/>
-                        &nbsp order: _____;<br/>
+                        &nbsp width: auto;<br/>
+                        &nbsp flex-grow: _____;<br/>
                         }
                     </code>
                 </div>
@@ -98,28 +98,222 @@
             <div class="layout-container evenly">
                 <div class="container">
                     <div class="description">
-                        <h3>without order</h3>
-                        <p>Flex items display in order by flow of DOM elements.</p>
+                        <h3>without flex-grow</h3>
+                        <p> </p>
                     </div>
                     <div class="example">
-                        <div class="display justify-end">
-                            <div class="box">One</div>
-                            <div class="box">Two</div>
-                            <div class="box">Three</div>
+                        <div class="display wider">
+                            <div class="box no-width">One</div>
+                            <div class="box no-width">Two</div>
+                            <div class="box no-width">Three</div>
                         </div>
                     </div>
                 </div>
                 <div class="container">
                     <div class="description">
-                        <h3>order: 1 / 2 / 3, etc</h3>
-                        <p>Applying <code>order: 1</code> to box three, <code>order: 2</code> to box one and
-                            <code>order: 3</code> to box two.</p>
+                        <h3>flex-grow: 1 / 2 / 3, etc</h3>
+                        <p>Applying <code>flex-grow: 1</code> to box one, <code>flex-grow: 2</code> to box two and
+                            <code>flex-grow: 3</code> to box three.</p>
                     </div>
                     <div class="example">
-                        <div class="display justify-center">
-                            <div class="box order-two">One</div>
-                            <div class="box order-three">Two</div>
-                            <div class="box order-one">Three</div>
+                        <div class="display wider">
+                            <div class="box no-width grow-one">One</div>
+                            <div class="box no-width grow-two">Two</div>
+                            <div class="box no-width grow-three">Three</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="flex-shrink">
+            <div class="layout-container evenly">
+                <div>
+                    <h2>flex-shrink:</h2>
+                    <p>Applied to children.</p>
+                    <p>Sets how much a flex item will shrink when not enough space, relative to other flex items in container.</p>
+                </div>
+                <div>
+                    <code>
+                        .parent: {<br/>
+                        &nbsp display: flex;<br/>
+                        &nbsp width: 180px;<br/>
+                        }<br/>
+                        .flex-items {<br/>
+                        &nbsp min-height: 80px;<br/>
+                        &nbsp width: 80px;<br/>
+                        &nbsp flex-shrink: _____;<br/>
+                        }
+                    </code>
+                </div>
+            </div>
+            <div class="layout-container evenly">
+                <div class="container">
+                    <div class="description">
+                        <h3>without flex-shrink</h3>
+                    </div>
+                    <div class="example">
+                        <div class="display wider">
+                            <div class="box twice-width">One</div>
+                            <div class="box twice-width">Two</div>
+                            <div class="box twice-width">Three</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>flex-shrink: 1 / 2 / 3, etc</h3>
+                        <p>Applying <code>flex-shrink:1</code> to box one, <code>flex-shrink: 2</code> to box two and
+                            <code>flex-shrink: 3</code> to box three.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display wider">
+                            <div class="box twice-width shrink-one">One</div>
+                            <div class="box twice-width shrink-two">Two</div>
+                            <div class="box twice-width shrink-three">Three</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="flex-basis">
+            <div class="layout-container evenly">
+                <div>
+                    <h2>flex-basis:</h2>
+                    <p>Applied to children.</p>
+                    <p>Sets initial size of flex item, before space is distributed by other flex factors.</p>
+                    <p>An <code>auto</code> value sizes the item to its size property.</p>
+                </div>
+                <div>
+                    <code>
+                        .parent: {<br/>
+                        &nbsp display: flex;<br/>
+                        &nbsp width: 180px;<br/>
+                        }<br/>
+                        .flex-items {<br/>
+                        &nbsp min-height: 80px;<br/>
+                        &nbsp width: auto;<br/>
+                        &nbsp flex-basis: _____;<br/>
+                        }
+                    </code>
+                </div>
+            </div>
+            <div class="layout-container evenly">
+                <div class="container">
+                    <div class="description">
+                        <h3>without flex-basis</h3>
+                    </div>
+                    <div class="example">
+                        <div class="display wider">
+                            <div class="box no-width">One</div>
+                            <div class="box no-width">Two</div>
+                            <div class="box no-width">Three</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>flex-basis: auto / 50px / 75px</h3>
+                        <p>Applying <code>flex-basis: auto</code> to box one, <code>flex-basis: 50px</code> to box two and
+                            <code>flex-basis: 75px</code> to box three.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display wider">
+                            <div class="box no-width basis-auto">One</div>
+                            <div class="box no-width basis-two">Two</div>
+                            <div class="box no-width basis-three">Three</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>flex-basis: 30px / 50px / 75px</h3>
+                        <p>Applying <code>flex-basis: 30px</code> to box one, <code>flex-basis: 50px</code> to box two and
+                            <code>flex-basis: 75px</code> to box three.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display wider">
+                            <div class="box no-width basis-one">One</div>
+                            <div class="box no-width basis-two">Two</div>
+                            <div class="box no-width basis-three">Three</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="align-self">
+            <div class="layout-container evenly">
+                <div>
+                    <h2>align-self:</h2>
+                    <p>Applied to children.</p>
+                    <p>Sets alignment of individual flex items.</p>
+                    <p>Accepts the same values as <code>align-items</code>.</p>
+                    <p>Can override <code>align-items</code>.</p>
+                    <p>Default is <code>stretch</code>.</p>
+                </div>
+                <div>
+                    <code>
+                        .parent: {<br/>
+                        &nbsp display: flex;<br/>
+                        &nbsp height: 160px;<br/>
+                        &nbsp width: 180px;<br/>
+                        }<br/>
+                        .flex-items {<br/>
+                        &nbsp min-height: 80px;<br/>
+                        &nbsp width: 40px;<br/>
+                        &nbsp align-self: _____;<br/>
+                        }
+                    </code>
+                </div>
+            </div>
+            <div class="layout-container evenly">
+                <div class="container">
+                    <div class="description">
+                        <h3>without align-self</h3>
+                    </div>
+                    <div class="example">
+                        <div class="display bigger wider">
+                            <div class="box">One</div>
+                            <div class="box">Two</div>
+                            <div class="box">Three</div>
+                            <div class="box">Four</div>
+                            <div class="box">Five</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>align-self: flex-start / flex-end / etc</h3>
+                        <p>Applying <code>flex-start</code> to box one,<br/>
+                            <code>flex-end</code> to box two,<br/>
+                            <code>center</code> to box three, <br/>
+                            <code>baseline</code> to box four, and<br/>
+                            <code>stretch</code> to box five.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display bigger wider">
+                            <div class="box self-start">One</div>
+                            <div class="box self-end">Two</div>
+                            <div class="box self-center">Three</div>
+                            <div class="box self-baseline">Four</div>
+                            <div class="box self-stretch">Five</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="description">
+                        <h3>align-self: flex-start / flex-end / etc</h3>
+                        <p>Applying <code>align-items: flex-start</code> to parent.</p>
+                        <p>Applying <code>flex-end</code> to box one,<br/>
+                            <code>flex-center</code> to box three, and<br/>
+                            <code>stretch</code> to box five.</p>
+                    </div>
+                    <div class="example">
+                        <div class="display align-start bigger wider">
+                            <div class="box self-end">One</div>
+                            <div class="box">Two</div>
+                            <div class="box self-center">Three</div>
+                            <div class="box">Four</div>
+                            <div class="box self-stretch">Five</div>
                         </div>
                     </div>
                 </div>
